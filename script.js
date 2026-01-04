@@ -2,7 +2,6 @@ document.querySelectorAll('.faq-trigger').forEach(trigger => {
     trigger.addEventListener('click', () => {
         const item = trigger.parentElement;
         const isActive = item.classList.contains('active');
-        
         document.querySelectorAll('.faq-item').forEach(i => {
             i.classList.remove('active');
             i.querySelector('.faq-icon').textContent = '+';
@@ -15,6 +14,10 @@ document.querySelectorAll('.faq-trigger').forEach(trigger => {
     });
 });
 
+const observerOptions = {
+    threshold: 0.1
+};
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -22,7 +25,7 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.style.transform = 'translateY(0)';
         }
     });
-}, { threshold: 0.1 });
+}, observerOptions);
 
 document.querySelectorAll('section').forEach(el => {
     el.style.opacity = '0';
