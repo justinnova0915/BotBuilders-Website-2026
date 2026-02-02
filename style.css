@@ -231,6 +231,7 @@ section {
 /* --- Grids (Team & Sponsors) --- */
 .team-grid, .sponsor-grid { 
     display: grid; 
+    place-items: center;
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
     gap: 40px; 
 }
