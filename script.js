@@ -1,3 +1,6 @@
+console.log("SCRIPT LOADED");
+
+
 document.querySelectorAll('.faq-trigger').forEach(trigger => {
     trigger.addEventListener('click', () => {
         const item = trigger.parentElement;
@@ -33,3 +36,5 @@ document.querySelectorAll('section').forEach(el => {
     el.style.transition = 'all 0.6s cubic-bezier(0.2, 0, 0, 1)';
     observer.observe(el);
 });
+
+
